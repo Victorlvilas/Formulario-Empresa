@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Creo la conexion con el css y js-->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <form id="regForm" action="">
+
+        <h1>Registro</h1>
+        
+        <!-- One "tab" for each step in the form: -->
+        <div class="tab">
+          <p>Nombre: <input placeholder="Nombre..." oninput="this.className = ''"></p>
+          <p>Apellidos: <input placeholder="Primer apellido..." oninput="this.className = ''"></p>
+          <p><input placeholder="Segundo apellido..." oninput="this.className = ''"></p>
+
+        </div>
+        
+        <div class="tab">
+            <p>Email: <input placeholder="E-mail..." oninput="this.className = ''"></p>
+            <p>Teléfono: <input placeholder="Teléfono..." oninput="this.className = ''"></p>
+          </div>
+
+        <div class="tab">
+            <p>Producto: <input placeholder="" oninput="this.className = ''"></p>
+            <p>Plazo: <input placeholder="" oninput="this.className = ''"></p>
+            <p>Presupuesto estimado: <input placeholder="" oninput="this.className = ''"></p>
+        </div>
+        
+        <div style="overflow:auto;">
+          <div style="float:right;">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+          </div>
+        </div>
+        
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+        
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
