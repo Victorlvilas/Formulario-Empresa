@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Creo la conexión con el css y js -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="regForm" action="">
+        <h1>Registro</h1>
+
+        <!-- Un "tab" para cada paso en el formulario: -->
+        <div class="tab">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col">
+                        <p>Nombre:</p>
+                        <input type="text" minlength="3" maxlength="15" class="controlLetras" placeholder="Nombre" name="nombre" id="nombre" pattern="[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+" title="El nombre solo puede contener letras y espacios" required>
+                    </div>
+                    <div class="col">
+                        <p>Apellidos:</p>
+                        <input type="text" minlength="8" maxlength="40" class="controlLetras" placeholder="Apellidos" name="apellidos" pattern="[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+" title="Los apellidos solo pueden contener letras y espacios" required>
+                    </div>
+                </div>
+                <p>Email: <input type="email" id="email" name="email" placeholder="E-mail..." ></p>
+                <p>Teléfono: <input type="tel" maxlength="10" size="9" placeholder="Teléfono..." pattern="\d{9}" title="El teléfono debe contener solo 10 dígitos" required></p>
+            </div>
+        </div>
+
+        <div class="tab">
+            <label for="producto" class="form-label">Producto:</label>
+            <select class="form-select" id="producto" name="producto" onclick="calcularSuma()">
+                <option value="100">Producto 1 - 100,00$</option>
+                <option value="150">Producto 2 - 150,00$</option>
+                <option value="200">Producto 3 - 200,00$</option>
+                <option value="250">Producto 4 - 250,00$</option>
+                <option value="400">Producto 5 - 400,00$</option>
+            </select>
+
+            <p>Extras:</p>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input type="checkbox" value="15" class="form-check-input" id="check1" name="checkbox" onclick="calcularSuma()" checked>
+                            <label class="form-check-label" for="check1">Extra 1</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input type="checkbox" value="15" class="form-check-input" id="check2" name="checkbox" onclick="calcularSuma()">
+                            <label class="form-check-label" for="check2">Extra 2</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input type="checkbox" value="15" class="form-check-input" id="check3" name="checkbox" onclick="calcularSuma()">
+                            <label class="form-check-label" for="check3">Extra 3</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input type="checkbox" value="15" class="form-check-input" id="check4" name="checkbox" onclick="calcularSuma()">
+                            <label class="form-check-label" for="check4">Extra 4</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input type="checkbox" value="15" class="form-check-input" id="check5" name="checkbox" onclick="calcularSuma()">
+                            <label class="form-check-label" for="check5">Extra 5</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <label for="plazos">Plazo:</label>
+            <select type="number" id="plazos" name="plazos" min="1" max="5" placeholder="1" onclick="calcularSuma()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <label for="suma">Presupuesto estimado:</label>
+            <input type="number" id="suma" name="suma" readonly value="0">
+        </div>
+
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+
+        <!-- Círculos que indican los pasos del formulario: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
